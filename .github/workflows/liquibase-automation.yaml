@@ -3,7 +3,7 @@ name: Synchronize database automation
 on: 
   push:
     branches: 
-      - main
+      - master
       
 jobs:
   setup-database: 
