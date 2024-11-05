@@ -13,9 +13,12 @@ jobs:
       - name: set up docker
         run: |
           docker --version 
+          sudo apt-get update
+          sudo apt-get install docker-compose-plugin
           
       - name: build and run PostgreSQL container
         run: |
+          docker compose version
           docker-compose -f docker-compose.yml up -d 
 
     
