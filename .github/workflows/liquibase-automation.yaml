@@ -1,0 +1,22 @@
+name: Synchronize database automation
+
+on: 
+  push:
+    branches: 
+      - main
+      
+jobs:
+  setup-database: 
+    runs-on: ubuntu-latest 
+
+    steps: 
+      - name: set up docker
+        run: |
+          docker --version 
+          
+      - name: build and run PostgreSQL container
+        run: |
+          docker-compose -f docker-compose.yml up -d 
+
+    
+
